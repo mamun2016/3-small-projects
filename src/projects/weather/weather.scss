@@ -1,0 +1,175 @@
+@import "../../main.scss";
+
+.weather {
+  &-title {
+    margin: 0 0 30px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  &-search {
+    display: flex;
+    background: #fff;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+    &-field {
+      font-size: 16px;
+      color: #555;
+      padding: 12px 20px;
+      background: none;
+      border: none;
+      flex: 1;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-button {
+      background: #668a5c;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 0 20px;
+      font-size: 16px;
+
+      &:hover {
+        background: #999060;
+      }
+    }
+  }
+
+  &-box {
+    background: #fff;
+    max-width: 800px;
+    border-radius: 10px;
+    margin: 0 auto 40px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  &-icon {
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 100px;
+    line-height: 0;
+  }
+
+  &-details {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    background: #333;
+
+    @include viewport-is(mobile) {
+      display: block;
+    }
+  }
+
+  &-condition,
+  &-date {
+    color: #fff;
+    padding: 25px;
+  }
+
+  &-date {
+    background: #668a5c;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+
+    > span {
+      margin: 0 6px 0 0;
+      font-size: 25px;
+      line-height: 0;
+    }
+  }
+
+  &-condition {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+
+  &-temp {
+    font-size: 60px;
+    font-weight: 100;
+    grid-row: span 2;
+    padding: 0 20px 0 0;
+
+    @include viewport-is(tab) {
+      font-size: 50px;
+    }
+  }
+
+  &-sky {
+    font-size: 32px;
+
+    @include viewport-is(tab) {
+      font-size: 25px;
+    }
+  }
+
+  &-city {
+    font-size: 20px;
+    font-weight: 100;
+    text-transform: uppercase;
+
+    @include viewport-is(tab) {
+      font-size: 16px;
+    }
+  }
+
+  &-extras {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+
+    @include viewport-is(tab) {
+      grid-template-columns: 1fr 1fr;
+      padding: 15px 0;
+    }
+
+    @include viewport-is(mobile) {
+      display: block;
+    }
+
+    &-details {
+      padding: 25px 5px;
+      display: flex;
+      align-items: center;
+  
+      @include viewport-is(tab) {
+        padding: 10px 5px;
+      }
+  
+      @include viewport-is(mobile) {
+        padding: 20px 10px 10px;
+        border-bottom: 1px solid #eee;
+
+        &:last-of-type {
+          border: none;
+        }
+      }
+  
+      > span,
+      > small {
+        font-size: 52px;
+        line-height: 0;
+        margin: 0 6px 0 0;
+      }
+  
+      > small {
+        font-size: 40px;
+      }
+    }
+
+    &-title {
+      margin: 0 0 6px;
+    }
+  }
+}

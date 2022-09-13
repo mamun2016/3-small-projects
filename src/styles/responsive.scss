@@ -1,0 +1,11 @@
+@mixin viewport-is($media) {
+  @if $media == large-desktop {
+    @media only screen and (max-width: 1200px) { @content; } // large desktops
+  } @else if $media == desktop {
+    @media only screen and (max-width: 991px) { @content; } // desktops and landscape tabs
+  } @else if $media == tab {
+    @media only screen and (max-width: 767px) { @content; } // portrait tabs and landscape mobiles
+  } @else if $media == mobile {
+    @media only screen and (max-width: 500px) { @content; } // portrait and landscape mobiles
+  }
+}
